@@ -13,6 +13,7 @@ body{
     color:#111;
 }
 
+/* ===== HERO ===== */
 .avatar{
     width:220px;
     height:220px;
@@ -32,12 +33,11 @@ body{
   padding:40px;
 
   background-image: url("images/pexels-alejandro-robles-duque-420889274-24742958.jpg");
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  color: #fff;
+  color:#fff;
 }
 
 .hero p{
@@ -57,6 +57,7 @@ p{
     margin: 0 auto;
 }
 
+/* ===== BUTTON ===== */
 .btn{
     margin-top:30px;
     padding:14px 28px;
@@ -68,28 +69,103 @@ p{
     box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
+/* ===== SECTIONS ===== */
 .section{
     padding:100px 20px;
     text-align:center;
-    color: #111;
+    color:#111;
 }
 
 .section p{
     color: rgba(17,17,17,0.85);
 }
-    
+
 .section h2{
     font-size:42px;
     margin-bottom:30px;
-    color: #111;
+    color:#111;
 }
 
+/* ===== PROJECT IMAGE ===== */
 .image-block img{
     max-width:500px;
     border-radius:20px;
     box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
 
+/* ===== CAROUSEL ===== */
+.carousel{
+    max-width:1000px;
+    margin:0 auto;
+}
+
+.carousel-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+    padding:0 20px;
+}
+
+.carousel-title{
+    font-size:34px;
+    margin:0;
+}
+
+.carousel-controls{
+    display:flex;
+    gap:10px;
+}
+
+.carousel-btn{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:1px solid rgba(0,0,0,0.15);
+    background:#fff;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.track{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding:10px 20px 30px;
+}
+
+.track::-webkit-scrollbar{
+    height:8px;
+}
+
+.track::-webkit-scrollbar-thumb{
+    background:rgba(0,0,0,0.15);
+    border-radius:10px;
+}
+
+.card{
+    flex:0 0 320px;
+    scroll-snap-align:start;
+    background:#fff;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.08);
+    text-align:left;
+}
+
+.card h3{
+    margin:0 0 10px;
+    font-size:18px;
+}
+
+.card p{
+    font-size:15px;
+    color:rgba(17,17,17,0.8);
+    max-width:none;
+}
+
+/* ===== FOOTER ===== */
 footer{
     padding:40px;
     text-align:center;
@@ -101,9 +177,9 @@ footer{
 
 <body>
 
+<!-- HERO -->
 <div class="hero">
-    
-    <img src="images/photo_glasses.jpg" class="avatar">
+    <img src="images/photo_glasses.jpg" class="avatar" alt="Фото">
     <h1>Светлана Калошкина</h1>
     <p>
         Пространство о проектах, эстетике и смыслах.
@@ -112,6 +188,7 @@ footer{
     <a class="btn" href="#about">Подробнее</a>
 </div>
 
+<!-- ABOUT -->
 <div class="section" id="about">
     <h2>Обо мне</h2>
     <p>
@@ -120,14 +197,65 @@ footer{
     </p>
 </div>
 
+<!-- COURSES CAROUSEL -->
+<div class="section">
+    <div class="carousel">
+
+        <div class="carousel-header">
+            <h2 class="carousel-title">Мои курсы в Сколково</h2>
+            <div class="carousel-controls">
+                <button class="carousel-btn" onclick="scrollCourses(-1)">←</button>
+                <button class="carousel-btn" onclick="scrollCourses(1)">→</button>
+            </div>
+        </div>
+
+        <div class="track" id="coursesTrack">
+            <div class="card">
+                <h3>Стратегия и конкурентные преимущества</h3>
+                <p>Анализ рынков, позиционирование и выбор долгосрочной ставки.</p>
+            </div>
+
+            <div class="card">
+                <h3>Финансы для управленцев</h3>
+                <p>Unit-экономика, P&L, инвестиционное мышление.</p>
+            </div>
+
+            <div class="card">
+                <h3>Маркетинг и рост</h3>
+                <p>ICP, каналы привлечения, продуктовый рост.</p>
+            </div>
+
+            <div class="card">
+                <h3>Лидерство и коммуникации</h3>
+                <p>Команды, ответственность, сложные решения.</p>
+            </div>
+
+            <div class="card">
+                <h3>Предпринимательство</h3>
+                <p>От идеи до пилота и масштабирования.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- PROJECTS -->
 <div class="section image-block">
     <h2>Проекты</h2>
-    <img src="images/Group_reboot.jpg" alt="project">
+    <img src="images/Group_reboot.jpg" alt="Проекты">
 </div>
 
 <footer>
     © 2026 Светлана Калошкина
 </footer>
+
+<script>
+function scrollCourses(direction){
+    const track = document.getElementById('coursesTrack');
+    const cardWidth = track.querySelector('.card').offsetWidth + 20;
+    track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+}
+</script>
 
 </body>
 </html>
