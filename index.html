@@ -93,77 +93,100 @@ p{
     box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* ===== CAROUSEL ===== */
-.carousel{
-    max-width:1000px;
-    margin:0 auto;
+/* ===== FULL WIDTH CAROUSEL ===== */
+
+.carousel-section{
+  padding:120px 0;
+  width:100%;
 }
 
 .carousel-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:30px;
-    padding:0 20px;
+  max-width:1200px;
+  margin:0 auto 40px;
+  padding:0 40px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 .carousel-title{
-    font-size:34px;
-    margin:0;
+  font-size:56px;
+  font-weight:600;
+  margin:0;
 }
 
 .carousel-controls{
-    display:flex;
-    gap:10px;
+  display:flex;
+  gap:12px;
 }
 
 .carousel-btn{
-    width:44px;
-    height:44px;
-    border-radius:50%;
-    border:1px solid rgba(0,0,0,0.15);
-    background:#fff;
-    cursor:pointer;
-    font-size:18px;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  border:1px solid rgba(0,0,0,0.12);
+  background:white;
+  cursor:pointer;
+  font-size:20px;
 }
 
+/* трек на всю ширину */
 .track{
-    display:flex;
-    gap:20px;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    padding:10px 20px 30px;
+  display:flex;
+  gap:32px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding: 0 40px 40px;
 }
 
 .track::-webkit-scrollbar{
-    height:8px;
+  height:8px;
 }
 
 .track::-webkit-scrollbar-thumb{
-    background:rgba(0,0,0,0.15);
-    border-radius:10px;
+  background:rgba(0,0,0,0.12);
+  border-radius:10px;
 }
 
+/* карточки шире и с фото */
 .card{
-    flex:0 0 320px;
-    scroll-snap-align:start;
-    background:#fff;
-    border-radius:20px;
-    padding:20px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.08);
-    text-align:left;
+  flex:0 0 420px;
+  scroll-snap-align:start;
+
+  background:#fff;
+  border-radius:28px;
+  overflow:hidden;
+
+  box-shadow:0 30px 60px rgba(0,0,0,0.12);
+  text-align:left;
+}
+
+/* фото сверху */
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+}
+
+/* текст */
+.card-content{
+  padding:22px;
 }
 
 .card h3{
-    margin:0 0 10px;
-    font-size:18px;
+  margin:0 0 10px;
+  font-size:20px;
 }
 
 .card p{
-    font-size:15px;
-    color:rgba(17,17,17,0.8);
-    max-width:none;
+  font-size:15px;
+  color:rgba(17,17,17,0.8);
+  max-width:none;
 }
+
+
 
 /* ===== FOOTER ===== */
 footer{
@@ -198,45 +221,60 @@ footer{
 </div>
 
 <!-- COURSES CAROUSEL -->
-<div class="section">
-    <div class="carousel">
+<div class="carousel-section">
 
-        <div class="carousel-header">
-            <h2 class="carousel-title">Мои курсы в Сколково</h2>
-            <div class="carousel-controls">
-                <button class="carousel-btn" onclick="scrollCourses(-1)">←</button>
-                <button class="carousel-btn" onclick="scrollCourses(1)">→</button>
-            </div>
-        </div>
+  <div class="carousel-header">
+    <h2 class="carousel-title">Мои курсы в Сколково</h2>
 
-        <div class="track" id="coursesTrack">
-            <div class="card">
-                <h3>Стратегия и конкурентные преимущества</h3>
-                <p>Анализ рынков, позиционирование и выбор долгосрочной ставки.</p>
-            </div>
-
-            <div class="card">
-                <h3>Финансы для управленцев</h3>
-                <p>Unit-экономика, P&L, инвестиционное мышление.</p>
-            </div>
-
-            <div class="card">
-                <h3>Маркетинг и рост</h3>
-                <p>ICP, каналы привлечения, продуктовый рост.</p>
-            </div>
-
-            <div class="card">
-                <h3>Лидерство и коммуникации</h3>
-                <p>Команды, ответственность, сложные решения.</p>
-            </div>
-
-            <div class="card">
-                <h3>Предпринимательство</h3>
-                <p>От идеи до пилота и масштабирования.</p>
-            </div>
-        </div>
-
+    <div class="carousel-controls">
+      <button class="carousel-btn" onclick="scrollCourses(-1)">←</button>
+      <button class="carousel-btn" onclick="scrollCourses(1)">→</button>
     </div>
+  </div>
+
+  <div class="track" id="coursesTrack">
+
+    <div class="card">
+      <img src="images/light_blue_sky.jpg">
+      <div class="card-content">
+        <h3>Стратегия и конкурентные преимущества</h3>
+        <p>Анализ рынков, позиционирование и выбор долгосрочной ставки.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/Blue_sky.jpg">
+      <div class="card-content">
+        <h3>Финансы для управленцев</h3>
+        <p>Unit-экономика, P&L, инвестиционное мышление.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/stars_sky.jpg">
+      <div class="card-content">
+        <h3>Маркетинг и рост</h3>
+        <p>ICP, каналы привлечения, продуктовый рост.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/planet.jpg">
+      <div class="card-content">
+        <h3>Лидерство и коммуникации</h3>
+        <p>Команды, ответственность, переговоры.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/Group_reboot.jpg">
+      <div class="card-content">
+        <h3>Предпринимательство</h3>
+        <p>От идеи до запуска и масштабирования.</p>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <!-- PROJECTS -->
@@ -251,9 +289,10 @@ footer{
 
 <script>
 function scrollCourses(direction){
-    const track = document.getElementById('coursesTrack');
-    const cardWidth = track.querySelector('.card').offsetWidth + 20;
-    track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+  const track = document.getElementById('coursesTrack');
+  const card = track.querySelector('.card');
+  const step = card.offsetWidth + 32;
+  track.scrollBy({ left: direction * step, behavior:'smooth' });
 }
 </script>
 
