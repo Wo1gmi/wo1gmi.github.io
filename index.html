@@ -1,47 +1,104 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <title>Светлана Калошкина</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Светлана Калошкина</title>
 
-  <style>
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto;
-      background:#0f1115;
-      color:#fff;
-      display:flex;
-      height:100vh;
-      align-items:center;
-      justify-content:center;
-    }
-    .card{
-      max-width:600px;
-      padding:40px;
-      border-radius:20px;
-      background:#181c24;
-      text-align:center;
-    }
-    a{
-      color:#9ecbff;
-      text-decoration:none;
-      margin:0 8px;
-    }
-  </style>
+<style>
+body{
+    margin:0;
+    font-family: "Helvetica Neue", system-ui, sans-serif;
+    background:#f7f5f3;
+    color:#111;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+    background:linear-gradient(180deg,#f7f5f3 0%,#ffd6c8 40%,#ff9ac2 70%,#ff8b3d 100%);
+}
+
+h1{
+    font-size:60px;
+    margin:0 0 20px;
+    font-weight:600;
+}
+
+p{
+    font-size:20px;
+    max-width:600px;
+    line-height:1.6;
+}
+
+.btn{
+    margin-top:30px;
+    padding:14px 28px;
+    border-radius:40px;
+    background:white;
+    text-decoration:none;
+    color:black;
+    font-weight:500;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.section{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.section h2{
+    font-size:42px;
+    margin-bottom:30px;
+}
+
+.image-block img{
+    max-width:500px;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+footer{
+    padding:40px;
+    text-align:center;
+    font-size:14px;
+    opacity:0.6;
+}
+</style>
 </head>
 
 <body>
-  <div class="card">
-    <h1>Светлана Калошкина</h1>
-    <p>AI / Robotics / Product / Venture</p>
 
+<div class="hero">
+    <h1>Светлана</h1>
     <p>
-      <a href="https://t.me/USERNAME">Telegram</a>
-      <a href="https://github.com/wo1gmi">GitHub</a>
-      <a href="mailto:you@email.com">Email</a>
-      <a href="https://linkedin.com/in/USERNAME">LinkedIn</a>
+        Пространство о проектах, эстетике и смыслах.
+        Здесь я делюсь тем, что создаю и во что верю.
     </p>
-  </div>
+    <a class="btn" href="#about">Подробнее</a>
+</div>
+
+<div class="section" id="about">
+    <h2>Обо мне</h2>
+    <p>
+        Я создаю проекты на пересечении эстетики, стратегии и личной философии.
+        Мне важно качество, глубина и системность.
+    </p>
+</div>
+
+<div class="section image-block">
+    <h2>Проекты</h2>
+    <img src="images/project.jpg" alt="project">
+</div>
+
+<footer>
+    © 2026 Светлана Калошкина
+</footer>
+
 </body>
 </html>
