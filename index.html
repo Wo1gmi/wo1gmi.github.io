@@ -174,38 +174,36 @@ p{
 
 /* карточки шире и с фото */
 .card{
-  flex:0 0 420px;
+  flex: 0 0 340px;          /* было 420px */
   scroll-snap-align:start;
-
   background:#fff;
-  border-radius:28px;
+  border-radius:22px;        /* было 28 */
   overflow:hidden;
-
-  box-shadow:0 30px 60px rgba(0,0,0,0.12);
+  box-shadow:0 18px 40px rgba(0,0,0,0.10); /* легче */
   text-align:left;
 }
 
-/* фото сверху */
 .card img{
   width:100%;
-  height:220px;
+  height:160px;              /* было 220 */
   object-fit:cover;
   display:block;
 }
 
-/* текст */
 .card-content{
-  padding:22px;
+  padding:18px;              /* было 22 */
 }
 
 .card h3{
-  margin:0 0 10px;
-  font-size:20px;
+  margin:0 0 8px;
+  font-size:18px;            /* было 20 */
+  line-height:1.2;
 }
 
 .card p{
-  font-size:15px;
-  color:rgba(17,17,17,0.8);
+  font-size:14px;            /* было 15 */
+  line-height:1.45;
+  color:rgba(17,17,17,0.78);
   max-width:none;
 }
 
@@ -218,6 +216,61 @@ footer{
     font-size:14px;
     opacity:0.6;
 }
+
+@media (max-width: 600px){
+
+  h1{
+    font-size:38px;
+  }
+
+  p{
+    font-size:16px;
+    padding:0 10px;
+  }
+
+  .avatar{
+    width:160px;
+    height:160px;
+  }
+
+  .carousel-title{
+    font-size:34px;
+  }
+
+  .carousel-header{
+    padding:0 18px;
+    margin-bottom:20px;
+  }
+
+  .track{
+    gap:16px;
+    padding:0 18px 24px;
+  }
+
+  .card{
+    flex: 0 0 260px;      /* компактные карточки на мобиле */
+    border-radius:18px;
+  }
+
+  .card img{
+    height:130px;
+  }
+
+  .card-content{
+    padding:14px;
+  }
+
+  .card h3{
+    font-size:16px;
+  }
+
+  .card p{
+    font-size:12.8px;     /* текст меньше на телефоне */
+    line-height:1.35;
+  }
+}
+
+
 </style>
 </head>
 
