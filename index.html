@@ -24,25 +24,25 @@ body{
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-.hero {
-    min-height: 100vh;   /* ← убрал \ */
+.hero{
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content:flex-end;
-    padding-bottom:140px; /* регулируешь высоту вручную */
+    justify-content: flex-end;
     align-items: center;
     text-align: center;
+
     padding: 40px;
+    padding-bottom: 140px; /* работает, потому что идет ПОСЛЕ padding */
 
-    position: relative;  /* обязательно */
-
+    position: relative;
     background-image: url("images/ChatGPT Image 13 февр. 2026 г., 13_29_26.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     color: #fff;
 }
+
 
 .hero::before {
     content: "";
@@ -282,6 +282,7 @@ html, body {
 }
 
 /* моб. правки */
+    
 @media (max-width: 600px){
 
   .hero{
