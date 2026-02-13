@@ -36,7 +36,7 @@ body{
 
     position: relative;  /* обязательно */
 
-    background-image: url("images/ChatGPT Image 13 февр. 2026 г., 13_05_50.png");
+    background-image: url("images/ChatGPT Image 13 февр. 2026 г., 13_29_26.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -271,7 +271,53 @@ footer{
   }
 }
 
+/* FIX mobile layout overflow */
+*,
+*::before,
+*::after { box-sizing: border-box; }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* убирает правую пустую полосу */
+}
+
+/* моб. правки */
+@media (max-width: 600px){
+
+  .hero{
+    width: 100%;
+    padding: 24px 16px;
+    background-position: center; /* можно center top */
+  }
+
+  /* заголовок + стрелки чтобы не разъезжались */
+  .carousel-header{
+    max-width: none;     /* важно */
+    padding: 0 16px;
+    margin: 0 0 18px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .carousel-controls{
+    margin-left: auto;   /* стрелки вправо */
+  }
+
+  /* трек на всю ширину без переполнения из-за padding */
+  .track{
+    width: 100%;
+    padding: 0 16px 20px;
+    gap: 14px;
+  }
+
+  /* карточки адаптивные по ширине экрана */
+  .card{
+    flex: 0 0 78vw;      /* вместо фиксированных 420/260px */
+    border-radius: 18px;
+  }
+  .card img{ height: 120px; }
+}
+
+    
 </style>
 </head>
 
